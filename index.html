@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='form'></div>
+        <div class='chat-block'>
+
+        </div>
+    </div>
+    <script>
+        let socket = io();
+        let chatBlock = document.querySelector('chat-block');
+        socket.on('message', function(message) {
+            let messageBlock = document.createElement("p");
+            messageBlock.className = 'chat-block__message-block';
+            messageBlock.innerHTML = message;
+            chatBlock.appendChild(messageBlock);
+        });
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            display: block;
+            padding: 0;
+            margin: 0;
+        }
+        html, body, .wrapper {
+            height: 100%;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form__input {
+            display: block;
+        }
+        .form__input:first-child {
+            margin: 20px;
+        }
+        .chat-block {
+            width: 300px;
+        }
+        .chat-block__message-block {
+            margin-bottom: 20px;
+        }
+        .chat-block__message-block:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</body>
+</html>

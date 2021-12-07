@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+html, body, .wrapper {
+    height: 100%;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 600px;
+    background-color: rgb(40, 40, 40);
+}
+.form {
+    width: 300px;
+    margin-right: 50px;
+}
+.form__name-input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.2;
+    color: rgb(255, 255, 255);
+    background-color: rgb(100, 100, 100);
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 6px;
+}
+.form__message-block {
+    position: relative;
+}
+.form__sticker-button {
+    padding: 5px;
+    display: block;
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background-color: rgb(120, 120, 120);
+    border: none;
+    border-radius: 100px;
+}
+.form__svg-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.form__message-input {
+    display: block;
+    width: 100%;
+    height: 200px;
+    padding: 8px;
+    margin-bottom: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: rgb(255, 255, 255);
+    background-color: rgb(100, 100, 100);
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 6px;
+}
+.form__sticker-block {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 10px 0px;
+    background-color: rgb(70, 70, 70);
+    border-radius: 6px;
+    opacity: 0;
+}
+.form__sticker {
+    display: block;
+    width: 60px;
+    height: auto;
+    margin: 0 3px 10px;
+}
+.form__submit-button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: rgb(255, 255, 255);
+    background-color: rgb(100, 100, 100);
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 6px;
+}
+.chat {
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 6px;
+    overflow-y: auto;
+    background-color: rgb(100, 100, 100);
+}
+.chat__message-block {
+    padding: 10px;
+}
+.chat__name {
+    margin-bottom: 10px;
+    font-size: 22px;
+    line-height: 1.2;
+}
+.chat__message {
+    font-size: 18px;
+    line-height: 1.2;
+    color: rgb(255, 255, 255);
+}
+.chat__image {
+    display: block;
+    width: 200px;
+    height: auto;
+}
