@@ -1,0 +1,1 @@
+Global chat is a tool that allows you to communicate with other people. This project is based on the socket.io library. In this chat, you can send text messages and stickers.
