@@ -1,9 +1,9 @@
-function displayBlock(e, stickerBlock) {
-    let display = stickerBlock.style.display;
+function displayElement(e, el, type) {
+    let display = el.style.display;
     e.preventDefault();
     if(display == '' || display == 'none') {
-        stickerBlock.style.display = 'flex';
-        stickerBlock.animate([
+        el.style.display = type;
+        el.animate([
             {opacity: "0"},
             {opacity: "1"}
         ], {
@@ -13,7 +13,7 @@ function displayBlock(e, stickerBlock) {
         });
         stickerBlockIsOpen = true;
     } else {
-        stickerBlock.animate([
+        el.animate([
             {opacity: "1"},
             {opacity: "0"}
         ], {
@@ -21,7 +21,7 @@ function displayBlock(e, stickerBlock) {
             easing: "ease-out",
             fill: "forwards"
         }).onfinish = function() {
-            stickerBlock.style.display = 'none';
+            el.style.display = 'none';
             stickerBlockIsOpen = false;
         };
     }

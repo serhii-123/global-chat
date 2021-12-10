@@ -7,6 +7,8 @@ function sendImg(e, socket, nameInput, img) {
         content,
         textColor,
     }
-    let imgLink = img.src;
+    
     socket.emit('message', JSON.stringify(obj));
+
+    console.log(obj);
 }

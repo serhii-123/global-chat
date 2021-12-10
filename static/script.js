@@ -1,10 +1,11 @@
 const socket = io();
 const chatBlock = document.querySelector('.chat');
 const nameInput = document.querySelector('.form__name-input');
+const nameButton = document.querySelector('.form__name-button')
 const messageInput = document.querySelector('.form__message-input');
 const submitButton = document.querySelector('.form__submit-button');
-const stickerButton = document.querySelector('.form__sticker-button');
-const stickerBlock = document.querySelector('.form__sticker-block');
+const stickersButton = document.querySelector('.form__stickers-button');
+const setOfStickers = document.querySelector('.form__set-of-stickers');
 const images = document.querySelectorAll('.form__sticker');
 const textColor = getRandomColor();
 
@@ -14,10 +15,13 @@ for(let x = 0; x < images.length; x++) {
     });
 }
 
-stickerButton.addEventListener('click', function(e) {
-    displayBlock(e, stickerBlock);
+stickersButton.addEventListener('click', function(e) {
+    displayElement(e, setOfStickers, 'flex');
 });
 
+nameButton.addEventListener('click', function(e) {
+    displayElement(e, nameInput, 'block');
+});
 
 socket.on('message', (msg) => {
     pasteMessage(msg, chatBlock);
