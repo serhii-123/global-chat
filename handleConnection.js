@@ -1,7 +1,7 @@
 let checkForVadility = require('./validation');
 let clients = [];
 
-function connection(io, socket, images) {
+function handleConnection(io, socket, images) {
     clients.push(socket.id);
 
     socket.on('message', (msg) => {
@@ -22,4 +22,4 @@ function connection(io, socket, images) {
     });
 }
 
-module.exports = connection;
+module.exports = handleConnection;

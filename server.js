@@ -1,7 +1,7 @@
 const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
-const connection = require('./connection');
+const handleConnection = require('./handleConnection');
 const app = express();
 const httpServer = http.createServer(app);
 const io = socketIO(httpServer);
@@ -19,7 +19,7 @@ let images = [
                 'http://localhost:7000/img/5.png'];
 
 io.on('connection', (socket) => {
-    connection(io, socket, images);
+    handleConnection(io, socket, images);
 });
 
 app.use(express.static(__dirname + '/static'));
