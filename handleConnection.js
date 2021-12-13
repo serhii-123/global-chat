@@ -22,9 +22,7 @@ function handleConnection(io, socket, images) {
     });
 
     socket.on('disconnect', () => {
-
         clients.splice(clients.indexOf(socket.id), 1);
-    
     });
 }
 

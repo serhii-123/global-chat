@@ -27,6 +27,13 @@ socket.on('message', (msg) => {
     pasteMessage(msg, chatBlock);
 });
 
+socket.on('disconnect', () => {
+    console.log('Error: you are disconnected');
+});
+
+socket.on('connect', () => {
+    console.log('Connected');
+});
 
 submitButton.addEventListener('click', (e) => {
     sendMessage(e, socket, nameInput, messageInput, textColor);
