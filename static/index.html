@@ -7,19 +7,22 @@
     <title>Document</title>
     <link rel='stylesheet' href='style.css'>
     <script src='socket.io.js' defer></script>
+    <script src='handleConnectionState.js' defer></script>
     <script src='sendImg.js' defer></script>
     <script src='displayBlock.js' defer></script>
     <script src='pasteMessage.js' defer></script>
     <script src='randomColor.js' defer></script>
     <script src='sendMessage.js' defer></script>
     <script src='script.js' defer></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class='wrapper'>
+        <div class='connection-error-pop-up'>
+            <p class='connection-error-pop-up__text'>Error: there is no connection to the server</p>
+        </div>
         <div class='chat'>
             
         </div>
