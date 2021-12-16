@@ -41,8 +41,6 @@ socket.on('connect', () => {
             handleConnectionState(connectionState, connectionErrorPopup);
             break;
     }
-
-    console.log('Connected');
 });
 
 socket.on('disconnect', () => {
@@ -56,8 +54,7 @@ submitButton.addEventListener('click', (e) => {
 
 setTimeout(function() {
     if(connectionState == 'uncertain') {
-        console.log('Error: there is no connection to the server');
+        connectionState = 'not_connected';
+        handleConnectionState(connectionState,connectionErrorPopup);
     }
 }, 100);
-
-console.log(connectionErrorPopup);

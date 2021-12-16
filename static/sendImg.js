@@ -9,6 +9,4 @@ function sendImg(e, socket, nameInput, img) {
     }
     
     socket.emit('message', JSON.stringify(obj));
-
-    console.log(obj);
 }

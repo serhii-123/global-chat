@@ -1,35 +1,31 @@
 function handleConnectionState(state, popup) {
+    let animationSettings = {
+        duration: 200,
+        easing: 'ease-out',
+        fill: 'forwards'
+    }
+    let transparentStateFrame = {
+        opacity: '0',
+        transform: 'translateY(-10px)'
+    }
+    let intransparentStateFrame = {
+        opacity: '1',
+        transform: 'translateY(0px)'
+    }
+
     switch(state) {
         case 'not_connected':
             popup.style.display = 'block';
             popup.animate([
-                {
-                    opacity: '0',
-                    transform: 'translateY(-10px)'
-                }, {
-                    opacity: '1',
-                    transform: 'translateY(0px)'
-                }
-            ], {
-                duration: 200,
-                easing: 'ease-out',
-                fill: 'forwards'
-            });
+                transparentStateFrame, 
+                intransparentStateFrame
+            ], animationSettings);
             break;
         case 'connected': 
             popup.animate([
-                {
-                    opacity: '1',
-                    transform: 'translateY(0px)'
-                }, {
-                    opacity: 0,
-                    transform: 'translateY(-10px)'
-                }
-            ], {
-                duration: 200,
-                easing: 'ease-out',
-                fill: 'forwards'
-            }).onfinish = function() {
+                intransparentStateFrame, 
+                transparentStateFrame
+            ], animationSettings).onfinish = function() {
                 popup.style.display = 'none';
             }
             break;
