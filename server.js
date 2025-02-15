@@ -25,5 +25,5 @@ io.on('connection', (socket) => {
 app.use(express.static(__dirname + '/static'));
 
 httpServer.listen(port, host, () => {
-    console.log('Server started');
+    console.log(`Server started at ${port} port`);
 });
